@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Projects.css";
-
+fetch("https://https://my-portfolio-p1ks.onrender.com")
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
