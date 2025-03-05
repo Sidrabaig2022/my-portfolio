@@ -1,0 +1,20 @@
+/* 🎀 Theme Toggle Button */
+.theme-toggle {
+    position: fixed; /* Fixes position */
+    top: 20px; /* Moves it below navbar */
+    right: 20px; /* Aligns to the right */
+    background: pink;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    z-index: 1001; /* Ensures it's on top of everything */
+}
+
+/* 🌟 Hover Effect */
+.theme-toggle:hover {
+    background: hotpink;
+}

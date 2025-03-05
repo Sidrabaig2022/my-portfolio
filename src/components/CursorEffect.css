@@ -1,0 +1,36 @@
+/* 🎀 Cursor Effect */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff69b4, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    mix-blend-mode: screen;
+    animation: pulse 0.3s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+/* 🎀 Responsive Design */
+@media (max-width: 768px) {
+    .glass-navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #home {
+        padding: 60px 15px;
+    }
+}
