@@ -6,7 +6,6 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
-import ThemeToggle from "./components/ThemeToggle";
 import "./styles.css";
 
 const App = () => {
@@ -33,7 +32,6 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <ThemeToggle />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

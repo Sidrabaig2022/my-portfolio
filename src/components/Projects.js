@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Projects.css";
-fetch("https://my-portfolio-p1ks.onrender.com", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ projects:"" }),
-})
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-  .catch((err) => console.error("Error fetching contact:", err));
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
@@ -28,7 +21,7 @@ const Projects = () => {
     >
       <h2 className="glow-text">💎 My Gorgeous Creations 💎</h2>
       <p className="projects-text">
-        Every project is crafted with **passion, innovation, and a touch of magic.** ✨  
+        Every project is crafted with <strong>passion, innovation, and a touch of magic.</strong> ✨  
         Explore some of my stunning works! 💖
       </p>
 

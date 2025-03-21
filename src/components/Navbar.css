@@ -1,49 +1,93 @@
-/* 🎀 Navbar Styles */
-.glass-navbar {
-    background: rgba(255, 182, 193, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 15px 0;
-    box-shadow: 0px 4px 10px rgba(255, 20, 147, 0.4);
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background:  hsl(330, 98%, 76%);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px  rgba(255, 105, 180, 0.842);
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
 }
 
-.glass-navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color:  #7e0944;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.menu-button:hover {
+    background:  hsla(330, 57%, 77%, 0.662);
+}
+
+.nav-links {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.glass-navbar ul li a {
-    text-decoration: none;
-    color: rgb(67, 12, 55);
-    font-size: 18px;
+    gap: 2rem;
     font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 25px;
-    transition: 0.3s;
-    background: rgba(255, 255, 255, 0.2);
     text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    margin-right: 3rem; /* Added space from dark mode button */
 }
 
-.glass-navbar ul li a:hover {
-    color: #ff1493;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0px 4px 10px rgba(255, 20, 147, 0.5);
+.nav-links a {
+    text-decoration: none;
+    color:  #2e1924;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
 }
-.glass-navbar {
-    background: rgba(255, 182, 193, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 15px 0;
-    box-shadow: 0px 4px 10px rgba(255, 20, 147, 0.4);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000; /* Lower than theme toggle */
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        text-align: center;
+        padding: 1rem 0;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
