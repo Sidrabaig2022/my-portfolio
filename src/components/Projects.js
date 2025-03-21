@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Projects.css";
-fetch("https://https://my-portfolio-p1ks.onrender.com")
+fetch("https://my-portfolio-p1ks.onrender.com", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ projects:"" }),
+})
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.error("Error fetching contact:", err));
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 

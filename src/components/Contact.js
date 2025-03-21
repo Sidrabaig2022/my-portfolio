@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import "./Contact.css";
-fetch("https://https://my-portfolio-p1ks.onrender.com")
-
-
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [success, setSuccess] = useState(null);
