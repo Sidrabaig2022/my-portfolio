@@ -9,8 +9,8 @@
 
 /* 💖 Glowing Title */
 h1.glow-text {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2rem; /* Adjust as needed */
+    margin-block: 1rem 0; /* Top and bottom margins */
     color: #ff69b4;
 }
 

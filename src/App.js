@@ -9,25 +9,36 @@ import Contact from "./components/Contact";
 import "./styles.css";
 
 const App = () => {
+  // ✅ Dynamic API & WebSocket URLs based on environment
+  const API_URL =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:5000/api"
+      : "https://my-portfolio-backend-production-6d68.up.railway.app/api";
+
+  const WS_URL =
+    process.env.NODE_ENV === "development"
+      ? "ws://localhost:5000/ws"
+      : "wss://my-portfolio-backend-production-6d68.up.railway.app/ws";
+
   useEffect(() => {
-    // Fetch projects from local backend
-    fetch("http://localhost:5000/api/projects")
+    // ✅ Fetch projects from correct backend URL
+    fetch(`${API_URL}/projects`)
       .then((response) => response.json())
       .then((data) => console.log("Projects:", data))
       .catch((error) => console.error("Error fetching projects:", error));
 
-    // WebSocket setup
-    const socket = new WebSocket("ws://localhost:5000/ws");
+    // ✅ WebSocket setup with correct URL
+    const socket = new WebSocket(WS_URL);
 
-    socket.onopen = () => console.log("WebSocket connected");
-    socket.onmessage = (event) => console.log("WebSocket message:", event.data);
-    socket.onerror = (error) => console.error("WebSocket error:", error);
-    socket.onclose = () => console.log("WebSocket disconnected");
+    socket.onopen = () => console.log("✅ WebSocket connected");
+    socket.onmessage = (event) => console.log("💬 WebSocket message:", event.data);
+    socket.onerror = (error) => console.error("❌ WebSocket error:", error);
+    socket.onclose = () => console.log("⚠️ WebSocket disconnected");
 
     return () => {
       socket.close();
     };
-  }, []);
+  }, [API_URL, WS_URL]);
 
   return (
     <Router>
